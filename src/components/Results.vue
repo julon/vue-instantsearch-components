@@ -14,6 +14,7 @@ export default {
   computed: {
     hits () {
       const response = this.$algoliaStore.getters.response(this.indexId)
+      console.log(response)
       return response && response.hits
     }
   }

@@ -19,12 +19,13 @@ export default {
     };
   },
   created() {
+    // init index when parent client is ready
     this.client.then(() => {
       this.$algoliaStore.dispatch("initIndex", {
         appId: this.appId,
         indexId: this.id
       });
-      // empty search
+      // populate index with empty search
       this.$algoliaStore.dispatch("search", {
         indexId: this.id,
         text: ""
